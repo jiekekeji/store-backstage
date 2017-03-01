@@ -1,5 +1,5 @@
 {
-  "name": "fsb-wwsp",
+  "name": "store-backstage",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "jiekekeji <jieke_rose@foxmail.com>",
@@ -13,8 +13,8 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "element-ui": "^1.2.3",
     "js-md5": "^0.4.2",
-    "mint-ui": "^2.1.1",
     "vue": "^2.1.0",
     "vue-resource": "^1.2.0",
     "vue-router": "^2.1.1",

@@ -11,9 +11,7 @@
 </template>
 
 <script>
-  import 'mint-ui/lib/style.css';
-  import {Toast} from 'mint-ui';
-  import {Indicator} from 'mint-ui';
+
   import {api} from '../constant/api'
   import {utils} from '../constant/utils'
 
