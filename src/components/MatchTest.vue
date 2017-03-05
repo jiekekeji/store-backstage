@@ -1,64 +1,33 @@
 <!--测试页面-->
 <template>
   <div class="container">
-    <el-row>
-      <el-col :span="24">
-        <div class="grid-content bg-purple-dark"></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="12">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="12">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="8">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="8">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-      <el-col :span="8">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="6">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="6">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :span="4">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple"></div>
-      </el-col>
-      <el-col :span="4">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-    </el-row>
+    <!--start 顶部导航栏-->
+    <div class="top-nav">
+
+
+    </div>
+    <!--end 顶部导航栏-->
+    <!--start 左侧导航栏-->
+    <div class="left-nav">
+      <el-menu default-active="2"  @open="handleOpen" @close="handleClose">
+        <el-submenu index="1">
+          <template slot="title"><i class="el-icon-message"></i>用户管理</template>
+          <el-menu-item index="matchresult">用户功能设置</el-menu-item>
+          <el-menu-item index="1-2">添加用户</el-menu-item>
+          <el-menu-item index="1-3">管理用户</el-menu-item>
+          <el-menu-item index="1-4">选项1</el-menu-item>
+        </el-submenu>
+        <el-menu-item index="2"><i class="el-icon-menu"></i>导航二</el-menu-item>
+        <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
+      </el-menu>
+    </div>
+    <!--end 左侧导航栏-->
+    <div class="main-content">
+      <!--主路由出口-->
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </div>
   </div>
 </template>
 
@@ -101,13 +70,11 @@
     },
     computer: {},
     methods: {
-      selectResult(item){
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
       },
-      //导航到测试页面
-      toMatchTest(){
-      },
-      //向上滑动
-      slideUp(){
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
       }
     },
 
