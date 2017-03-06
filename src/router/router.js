@@ -9,8 +9,14 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 
-import MatchTest from '../components/MatchTest.vue';
-import MatchResult from '../components/MatchResult.vue';
+import Main from '../components/Main.vue';
+import FirstPage from '../components/FirstPage.vue';
+import Login from '../components/Login.vue';
+// 用户相关
+import UserList from '../components/UserList.vue';
+import UserFind from '../components/UserFind.vue';
+import UserFunSet from '../components/UserFunSet.vue';
+
 
 Vue.use(VueRouter);
 
@@ -18,18 +24,45 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    redirect: '/matchtest',
-    component: MatchTest,
+    redirect: '/main',
+    component: Main,
   },
   {
-    name: 'MatchTest',
-    path: '/matchtest',
-    component: MatchTest
+    name: 'Main',
+    path: '/main',
+    component: Main,
+    children: [
+      {
+        name: 'FirstPage',
+        path: 'firstpage',
+        component: FirstPage,
+      },
+      {
+        name: 'UserList',
+        path: 'userlist',
+        component: UserList,
+      },
+      {
+        name: 'UserFind',
+        path: 'userfind',
+        component: UserFind,
+      },
+      {
+        name: 'UserList',
+        path: 'userlist',
+        component: UserList,
+      },
+      {
+        name: 'UserFunSet',
+        path: 'userfunset',
+        component: UserFunSet,
+      },
+    ]
   },
   {
-    name: 'MatchResult',
-    path: '/matchresult',
-    component: MatchResult
+    name: 'Login',
+    path: '/login',
+    component: Login
   },
 ];
 
