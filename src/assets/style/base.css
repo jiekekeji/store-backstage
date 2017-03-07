@@ -1,5 +1,6 @@
-.mb-nav{
+.mb-nav {
   height: 40px;
-  width: 100%;
-  background-color: red;
+  width: auto;
+  line-height: 40px;
+  text-align: center;
 }

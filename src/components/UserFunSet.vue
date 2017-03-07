@@ -1,13 +1,11 @@
 <template>
   <div>
-    <!--<div class="mb-nav">-->
-    <el-breadcrumb separator="/" class="mb-nav">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-      <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-      <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+    <el-breadcrumb separator="/" style="padding-left: 10px;background-color: #EEF1F6">
+      <el-breadcrumb-item :to="{ path: '/' }" class="mb-nav">首页</el-breadcrumb-item>
+      <el-breadcrumb-item class="mb-nav">活动管理</el-breadcrumb-item>
+      <el-breadcrumb-item class="mb-nav">活动列表</el-breadcrumb-item>
+      <el-breadcrumb-item class="mb-nav">活动详情</el-breadcrumb-item>
     </el-breadcrumb>
-    <!--</div>-->
   </div>
 </template>
 <style>
