@@ -16,6 +16,15 @@ import Login from '../components/Login.vue';
 import UserList from '../components/UserList.vue';
 import UserFind from '../components/UserFind.vue';
 import UserFunSet from '../components/UserFunSet.vue';
+import UserAdd from '../components/UserAdd.vue';
+
+//商品相关
+import PdFunSet from '../components/PdFunSet.vue';
+import PdAdd from '../components/PdAdd.vue';
+import PdClz from '../components/PdClz.vue';
+import PdList from '../components/PdList.vue';
+import PdHot from '../components/PdHot.vue';
+import PdLunBo from '../components/PdLunBo.vue';
 
 
 Vue.use(VueRouter);
@@ -56,6 +65,41 @@ const routes = [
         name: 'UserFunSet',
         path: 'userfunset',
         component: UserFunSet,
+      },
+      {
+        name: 'PdLunBo',
+        path: 'pdlunbo',
+        component: PdLunBo,
+      },
+      {
+        name: 'PdHot',
+        path: 'pdhot',
+        component: PdHot,
+      },
+      {
+        name: 'PdList',
+        path: 'pdlist',
+        component: PdList,
+      },
+      {
+        name: 'PdClz',
+        path: 'pdclz',
+        component: PdClz,
+      },
+      {
+        name: 'PdAdd',
+        path: 'pdadd',
+        component: PdAdd,
+      },
+      {
+        name: 'PdFunSet',
+        path: 'pdfunset',
+        component: PdFunSet,
+      },
+      {
+        name: 'UserAdd',
+        path: 'useradd',
+        component: UserAdd,
       },
     ]
   },

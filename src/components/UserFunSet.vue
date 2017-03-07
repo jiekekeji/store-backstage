@@ -1,11 +1,12 @@
 <template>
-  <div>
-    <el-breadcrumb separator="/" style="padding-left: 10px;background-color: #EEF1F6">
-      <el-breadcrumb-item :to="{ path: '/' }" class="mb-nav">首页</el-breadcrumb-item>
-      <el-breadcrumb-item class="mb-nav">活动管理</el-breadcrumb-item>
-      <el-breadcrumb-item class="mb-nav">活动列表</el-breadcrumb-item>
-      <el-breadcrumb-item class="mb-nav">活动详情</el-breadcrumb-item>
-    </el-breadcrumb>
+  <div class="content-container">
+    <div class="content-title">
+      用户功能设置
+    </div>
+    <div class="content">
+
+    </div>
+
   </div>
 </template>
 <style>

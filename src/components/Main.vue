@@ -3,8 +3,6 @@
   <div class="container">
     <!--start 顶部导航栏-->
     <div class="top-nav">
-
-
     </div>
     <!--end 顶部导航栏-->
     <!--start 左侧导航栏-->
@@ -16,13 +14,16 @@
           <el-menu-item index="/main/userfunset">用户功能设置</el-menu-item>
           <el-menu-item index="/main/userlist">用户列表</el-menu-item>
           <el-menu-item index="/main/userfind">用户查找</el-menu-item>
+          <el-menu-item index="/main/useradd">添加用户</el-menu-item>
         </el-submenu>
         <el-submenu index="3">
           <template slot="title"><i class="el-icon-message"></i>商城管理</template>
-          <el-menu-item index="/main/userfunset">商城功能设置</el-menu-item>
-          <el-menu-item index="/main/userlist">商品管理</el-menu-item>
-          <el-menu-item index="/main/userfind">轮播商品管理</el-menu-item>
-          <el-menu-item index="/main/userfind">订单管理</el-menu-item>
+          <el-menu-item index="/main/pdfunset">商城功能设置</el-menu-item>
+          <el-menu-item index="/main/pdclz">商品类别</el-menu-item>
+          <el-menu-item index="/main/pdadd">添加商品</el-menu-item>
+          <el-menu-item index="/main/pdlist">商品列表</el-menu-item>
+          <el-menu-item index="/main/pdlunbo">轮播商品</el-menu-item>
+          <el-menu-item index="/main/pdhot">热销商品</el-menu-item>
         </el-submenu>
         <el-submenu index="4">
           <template slot="title"><i class="el-icon-message"></i>购物车管理</template>
@@ -57,7 +58,7 @@
           <el-menu-item index="/main/userfunset">商城功能设置</el-menu-item>
           <el-menu-item index="/main/userlist">商品管理</el-menu-item>
           <el-menu-item index="/main/userfind">轮播商品管理</el-menu-item>
-          <el-menu-item index="/main/userfind">订单管理</el-menu-item>
+          <el-menu-item index="/main/userfind" style="margin-bottom: 60px">订单管理</el-menu-item>
         </el-submenu>
       </el-menu>
     </div>
@@ -72,7 +73,6 @@
 </template>
 
 <script>
-
   import {api} from '../constant/api'
   import {utils} from '../constant/utils'
 
@@ -100,11 +100,9 @@
     },
     beforeRouteEnter  (to, from, next) {
       utils.setDocumentTitle('商城后台');
-      utils.setBodyBgColor("#F6F2ED");
       next();
     },
     beforeRouteLeave (to, from, next) {
-      utils.setBodyBgColor("#FFFFFF");
       next();
     },
     computer: {},
