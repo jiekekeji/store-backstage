@@ -16,7 +16,9 @@
             <el-button slot="append" icon="search"></el-button>
           </el-input>
         </div>
-        <div class="search-option"></div>
+        <div class="search-option">
+
+        </div>
 
       </div>
     </div>
@@ -24,20 +26,61 @@
     <!--start 表格内容-->
     <div class="content">
       <div>
-        <el-table :data="tableData3" border class="table-style">
+        <el-table :data="tableData3" border class="table-style" height="500">
           <el-table-column
-            prop="date"
-            label="日期"
+            type="selection"
+            width="55">
+          </el-table-column>
+          <el-table-column
+            prop="username"
+            label="用户名"
             width="180">
           </el-table-column>
           <el-table-column
-            prop="name"
-            label="姓名"
+            prop="phonenum"
+            label="手机号">
+          </el-table-column>
+          <el-table-column
+            prop="viplevel"
+            label="会员等级"
             width="180">
           </el-table-column>
           <el-table-column
-            prop="address"
-            label="地址">
+            prop="fullname"
+            label="姓名">
+          </el-table-column>
+          <el-table-column
+            prop="gender"
+            label="性别">
+          </el-table-column>
+          <el-table-column
+            prop="email"
+            label="Email">
+          </el-table-column>
+          <el-table-column
+            prop="balance"
+            label="余额">
+          </el-table-column>
+          <el-table-column
+            prop="integral"
+            label="积分">
+          </el-table-column>
+          <el-table-column
+            prop="status"
+            label="状态">
+          </el-table-column>
+          <el-table-column
+            prop="registertime"
+            label="注册时间">
+          </el-table-column>
+          <el-table-column
+            fixed="right"
+            label="操作"
+            width="100">
+            <template scope="scope">
+              <el-button @click="handleClick" type="text" size="small">查看</el-button>
+              <el-button type="text" size="small">编辑</el-button>
+            </template>
           </el-table-column>
         </el-table>
       </div>
@@ -46,11 +89,10 @@
         <el-pagination
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
-          :current-page="currentPage4"
-          :page-sizes="[100, 200, 300, 400]"
+          :current-page="currentPage3"
           :page-size="100"
-          layout="total, sizes, prev, pager, next, jumper"
-          :total="400">
+          layout="prev, pager, next, jumper"
+          :total="1000">
         </el-pagination>
       </div>
       <!--end 分页内容-->
@@ -91,6 +133,22 @@
           address: '上海市普陀区金沙江路 1518 弄'
         }, {
           date: '2016-05-07',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-08',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄'
         }],
