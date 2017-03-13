@@ -13,8 +13,7 @@
           <template slot="title"><i class="el-icon-message"></i>用户管理</template>
           <el-menu-item index="/main/userfunset">用户功能设置</el-menu-item>
           <el-menu-item index="/main/userlist">用户列表</el-menu-item>
-          <el-menu-item index="/main/userfind">用户查找</el-menu-item>
-          <el-menu-item index="/main/useradd">添加用户</el-menu-item>
+          <el-menu-item index="/main/useradd">用户添加</el-menu-item>
         </el-submenu>
         <el-submenu index="3">
           <template slot="title"><i class="el-icon-message"></i>商城管理</template>
@@ -116,6 +115,49 @@
 </script>
 
 <style scoped>
-  @import "../assets/style/main.css";
+  /*start 整个页面*/
+  .container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
+  /*end 整个页面*/
+  /*start 顶部导航*/
+  .top-nav {
+    height: 48px;
+    width: 100%;
+    background-color: #dce9f2;
+  }
+
+  /*end 顶部导航*/
+  /*start 左侧导航*/
+  .left-nav {
+    height: 100%;
+    width: 170px;
+    position: absolute;
+    top: 48px;
+    left: 0px;
+    bottom: 0px;
+    overflow-y: scroll;
+    background-color: #eef1f6;
+  }
+
+  /*end 左侧导航*/
+  /*start 主体内容*/
+  .main-content {
+    height: 100%;
+    position: absolute;
+    top: 48px;
+    left: 170px;
+    right: 0;
+    bottom: 0px;
+    overflow-y: auto;
+  }
+
+  /*end 主体内容*/
 </style>

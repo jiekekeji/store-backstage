@@ -6,6 +6,9 @@
         用户列表
       </div>
       <div class="content-option">
+        <div class="search-option">
+          <el-button type="primary" icon="delete">刪除所选</el-button>
+        </div>
         <div class="search-input">
           <el-input placeholder="请输入内容" v-model="input5">
             <el-select v-model="select" slot="prepend" placeholder="请选择">
@@ -16,10 +19,6 @@
             <el-button slot="append" icon="search"></el-button>
           </el-input>
         </div>
-        <div class="search-option">
-
-        </div>
-
       </div>
     </div>
     <!--<div class="zhanwei"></div>-->
@@ -99,10 +98,7 @@
     </div>
   </div>
 </template>
-<style>
-  @import "../assets/style/base.css";
-  @import "../assets/style/userlist.css";
-</style>
+
 <script>
   export default{
     data(){
@@ -157,3 +153,32 @@
     components: {}
   }
 </script>
+<style scoped>
+  @import "../assets/style/base.css";
+  /*start 搜索区域*/
+  .content-option {
+    height: auto;
+    width: 100%;
+  }
+
+  .content-option > div {
+    height: 60px;
+  }
+
+  .search-input {
+    float: right;
+    width: 360px;
+    margin: 0 auto;
+    line-height: 60px;
+    margin-right: 30px;
+  }
+
+  .search-option {
+    line-height: 60px;
+    float: left;
+    width: 120px;
+    margin-left: 10px;
+  }
+
+  /*end 搜索区域*/
+</style>
