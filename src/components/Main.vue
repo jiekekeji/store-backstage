@@ -116,7 +116,6 @@
 </script>
 
 <style scoped>
-  @import "../style/match-test.css";
-
+  @import "../assets/style/main.css";
 
 </style>

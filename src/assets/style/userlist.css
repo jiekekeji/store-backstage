@@ -1,0 +1,17 @@
+/*start 搜索区域*/
+.content-option {
+  height: 120px;
+  width: 100%;
+}
+
+.content-option > div {
+  height: 60px;
+}
+
+.search-input{
+  width: 360px;
+  margin: 0 auto;
+  line-height: 60px;
+}
+
+/*end 搜索区域*/

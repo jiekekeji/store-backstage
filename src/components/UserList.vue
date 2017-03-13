@@ -5,12 +5,24 @@
       <div class="content-title">
         用户列表
       </div>
-      <div class="content-option"></div>
+      <div class="content-option">
+        <div class="search-input">
+          <el-input placeholder="请输入内容" v-model="input5">
+            <el-select v-model="select" slot="prepend" placeholder="请选择">
+              <el-option label="用户名" value="1"></el-option>
+              <el-option label="手机号" value="2"></el-option>
+              <el-option label="邮箱" value="3"></el-option>
+            </el-select>
+            <el-button slot="append" icon="search"></el-button>
+          </el-input>
+        </div>
+        <div class="search-option"></div>
+
+      </div>
     </div>
-    <div class="zhanwei"></div>
+    <!--<div class="zhanwei"></div>-->
     <!--start 表格内容-->
     <div class="content">
-
       <div>
         <el-table :data="tableData3" border class="table-style">
           <el-table-column
@@ -29,6 +41,7 @@
           </el-table-column>
         </el-table>
       </div>
+      <!--start 分页内容-->
       <div class="page-sty">
         <el-pagination
           @size-change="handleSizeChange"
@@ -40,12 +53,13 @@
           :total="400">
         </el-pagination>
       </div>
-
+      <!--end 分页内容-->
     </div>
   </div>
 </template>
 <style>
   @import "../assets/style/base.css";
+  @import "../assets/style/userlist.css";
 </style>
 <script>
   export default{
@@ -79,7 +93,7 @@
           date: '2016-05-07',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄'
-        }]
+        }],
       }
     },
     components: {}

@@ -1,3 +1,4 @@
+/*start 面包屑样式*/
 .bread-nav {
   height: 40px;
   width: auto;
@@ -9,26 +10,19 @@
   padding-left: 10px;
 }
 
+/*end 面包屑样式*/
+
 /*start 主内容公共样式*/
 .content-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-.title-container {
-  height: 72px;
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0%;
+  height: 100%;
 }
 
-.zhanwei {
-  height: 72px;
+/*end 主内容公共样式*/
+
+/*start 顶部标题*/
+.title-container {
+  height: auto;
   width: 100%;
 }
 
@@ -38,15 +32,11 @@
   text-indent: 10px;
   line-height: 36px;
   font-size: 15px;
+  color: white;
+  background-color: #474544;
 }
 
-.content-option {
-  height: 36px;
-  width: 100%;
-  background-color: antiquewhite;
-}
-
-/*end 主内容公共样式*/
+/*end 顶部标题*/
 
 /*start 基本的表格样式*/
 .table-style {
