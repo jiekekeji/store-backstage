@@ -10,7 +10,7 @@
           <el-button type="primary" icon="delete">添加分类</el-button>
         </div>
         <div class="search-input">
-          <el-input placeholder="请输入内容" v-model="input5">
+          <el-input placeholder="请输入内容" v-model="input5" style="margin-top: 10px">
             <el-select v-model="select" slot="prepend" placeholder="请选择">
               <el-option label="一级分类" value="1"></el-option>
               <el-option label="二级分类" value="2"></el-option>
@@ -23,16 +23,17 @@
     </div>
     <!--end 标题和操作部分-->
     <!--start 内容部分-->
-    <div class="content" style="background-color: #007aff;height: 400px;margin-top: 10px">
-      <!--<el-tree-->
-        <!--:data="data2"-->
-        <!--show-checkbox-->
-        <!--default-expand-all-->
-        <!--node-key="id"-->
-        <!--ref="tree"-->
-        <!--highlight-current-->
-        <!--:props="defaultProps">-->
-      <!--</el-tree>-->
+    <div class="content" style="background-color: #007aff;height: 400px;">
+      <el-tree
+        :data="data2"
+        :props="defaultProps"
+        show-checkbox
+        node-key="id"
+        default-expand-all
+        :expand-on-click-node="false"
+        :render-content="renderContent"
+      >
+      </el-tree>
     </div>
     <!--end 内容部分-->
 
@@ -40,9 +41,12 @@
 </template>
 
 <script>
+  let id = 1000;
   export default{
     data(){
       return {
+        input5: '',
+        select: '',
         data2: [{
           id: 1,
           label: '一级 1',
@@ -78,21 +82,39 @@
             label: '二级 3-2'
           }]
         }],
+        defaultProps: {
+          children: 'children',
+          label: 'label'
+        }
       }
     },
-    components: {}
+    components: {},
+    methods: {
+      append(store, data) {
+        store.append({id: id++, label: 'testtest', children: []}, data);
+      },
+
+      remove(store, data) {
+        store.remove(data);
+      },
+
+      renderContent(h, {node, data, store}) {
+        console.log('renderContent');
+        return (node.label);
+      }
+    }
   }
 </script>
 <style scoped>
   @import "../assets/style/base.css";
   /*start 搜索区域*/
   .content-option {
-    height: auto;
+    height: 60px;
     width: 100%;
   }
 
   .content-option > div {
-    height: 60px;
+    height: 100%;
   }
 
   .search-input {
