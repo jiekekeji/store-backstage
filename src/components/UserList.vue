@@ -10,7 +10,7 @@
           <el-button type="primary" icon="delete">刪除所选</el-button>
         </div>
         <div class="search-input">
-          <el-input placeholder="请输入内容" v-model="input5">
+          <el-input placeholder="请输入内容" v-model="input5" style="margin-top: 10px">
             <el-select v-model="select" slot="prepend" placeholder="请选择">
               <el-option label="用户名" value="1"></el-option>
               <el-option label="手机号" value="2"></el-option>
@@ -75,7 +75,7 @@
           <el-table-column
             fixed="right"
             label="操作"
-            width="100">
+            width="120">
             <template scope="scope">
               <el-button @click="handleClick" type="text" size="small">查看</el-button>
               <el-button type="text" size="small">编辑</el-button>
