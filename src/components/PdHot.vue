@@ -54,24 +54,28 @@
         defaultProps: {
           children: 'children',
           label: 'label'
-        }
+        },
+        mstore: {},
+        mdata: {}
       }
+
     },
 
     methods: {
       append(store, data) {
+        console.log(data);
         store.append({id: id++, label: 'testtest', children: []}, data);
       },
-
       remove(store, data) {
-        store.remove(data);
+        console.log('remove');
+//        store.remove(data);
       },
-
       renderContent(h, {node, data, store}) {
-        console.log(node);
         console.log(data);
         console.log(store);
         let me = this;
+        me.mstore = store;
+        me.mdata = data;
         return h('span', [h('span', [h('span', node.label)]), h('span', {
           style: {
             'margin-right': '20px',
@@ -83,19 +87,22 @@
             'size': 'mini',
           },
           on: {
-            click: me.append(store, data),
-//            click: function (store, data) {
-//              console.log(data);
-//              store.append({id: id++, label: 'testtest', children: []}, data);
-//            }
+            click: function (store, data) {
+              console.log('click');
+            },
           }
         }, ['添加']), h('el-button', {
-          attrs: {'size': 'mini'}, on: {
-            click: function (store, data) {
-              store.remove(data);
+            attrs: {
+              'size': 'mini',
+            },
+            on: {
+              click: function (store, data) {
+                console.log(store.target);
+              }
             }
-          }
-        }, ['删除'])])]);
+          },
+          ['删除']
+        )])]);
       }
     }
   };
