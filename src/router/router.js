@@ -57,11 +57,6 @@ const routes = [
         component: UserFind,
       },
       {
-        name: 'UserList',
-        path: 'userlist',
-        component: UserList,
-      },
-      {
         name: 'UserFunSet',
         path: 'userfunset',
         component: UserFunSet,
