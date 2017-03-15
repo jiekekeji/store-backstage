@@ -70,6 +70,12 @@
         console.log('remove');
 //        store.remove(data);
       },
+      nodeClick(node, data, store, event){
+        console.log(node);
+        console.log(data);
+        console.log(store);
+        console.log(event);
+      },
       renderContent(h, {node, data, store}) {
         console.log(data);
         console.log(store);
@@ -96,8 +102,9 @@
               'size': 'mini',
             },
             on: {
-              click: function (store, data) {
-                console.log(store.target);
+              click: function () {
+                store.remove(data);
+                console.log(store);
               }
             }
           },
