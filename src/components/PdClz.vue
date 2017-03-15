@@ -138,8 +138,6 @@
   /*start 搜索区域*/
   .content-option {
     height: auto;
-    min-height: 60px;
-    max-height: 120px;
     width: 100%;
     overflow: auto
   }
