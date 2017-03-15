@@ -23,7 +23,7 @@
     </div>
     <!--end 标题和操作部分-->
     <!--start 内容部分-->
-    <div class="content" style="height: 200px;overflow-y: auto">
+    <div class="content">
       <el-tree
         :data="data2"
         :props="defaultProps"
@@ -35,7 +35,18 @@
       </el-tree>
     </div>
     <!--end 内容部分-->
-
+    <!--start 分页内容-->
+    <div class="page-sty">
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage3"
+        :page-size="100"
+        layout="prev, pager, next, jumper"
+        :total="1000">
+      </el-pagination>
+    </div>
+    <!--end 分页内容-->
   </div>
 </template>
 
@@ -92,12 +103,10 @@
 
     methods: {
       renderContent(h, {node, data, store}) {
-        let me = this;
         return h('span', [h('span', [h('span', node.label)]), h('span', {
           style: {
             'margin-right': '20px',
-            'position': 'absolute',
-            'right': '0'
+            'float': 'right'
           }
         }, [h('el-button', {
           attrs: {
@@ -128,15 +137,15 @@
   @import "../assets/style/base.css";
   /*start 搜索区域*/
   .content-option {
-    height: 60px;
+    height: auto;
+    min-height: 60px;
+    max-height: 120px;
     width: 100%;
-  }
-
-  .content-option > div {
-    height: 100%;
+    overflow: auto
   }
 
   .search-input {
+    height: 60px;
     float: right;
     width: 360px;
     margin: 0 auto;
@@ -145,6 +154,7 @@
   }
 
   .search-option {
+    height: 60px;
     line-height: 60px;
     float: left;
     width: 120px;
@@ -152,4 +162,12 @@
   }
 
   /*end 搜索区域*/
+  .content {
+    height: 500px;
+    overflow-y: auto;
+  }
+
+  .el-tree-node__content {
+    position: relative;
+  }
 </style>
