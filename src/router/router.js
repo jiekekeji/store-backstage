@@ -42,6 +42,11 @@ const routes = [
     component: Main,
     children: [
       {
+        name: 'PdAdd',
+        path: 'pdadd',
+        component: PdAdd,
+      },
+      {
         name: 'FirstPage',
         path: 'firstpage',
         component: FirstPage,
@@ -81,11 +86,7 @@ const routes = [
         path: 'pdclz',
         component: PdClz,
       },
-      {
-        name: 'PdAdd',
-        path: 'pdadd',
-        component: PdAdd,
-      },
+
       {
         name: 'PdFunSet',
         path: 'pdfunset',
