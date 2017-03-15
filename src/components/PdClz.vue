@@ -23,14 +23,13 @@
     </div>
     <!--end 标题和操作部分-->
     <!--start 内容部分-->
-    <div class="content" style="height: auto;">
+    <div class="content" style="height: 200px;overflow-y: auto">
       <el-tree
         :data="data2"
         :props="defaultProps"
         show-checkbox
         node-key="id"
         default-expand-all
-        @node-click="nodeClick"
         :expand-on-click-node="false"
         :render-content="renderContent">
       </el-tree>
@@ -85,32 +84,15 @@
           children: 'children',
           label: 'label'
         },
-        mstore: {},
-        mdata: {}
+        input5: '',
+        select: ''
       }
 
     },
 
     methods: {
-      append(store, data) {
-        console.log(data);
-        store.append({id: id++, label: 'testtest', children: []}, data);
-      },
-      remove(store, data) {
-        console.log('remove');
-//        store.remove(data);
-      },
-      nodeClick(node, data, store){
-        console.log(node);
-        console.log(data);
-        console.log(store);
-      },
       renderContent(h, {node, data, store}) {
-        console.log(data);
-        console.log(store);
         let me = this;
-        me.mstore = store;
-        me.mdata = data;
         return h('span', [h('span', [h('span', node.label)]), h('span', {
           style: {
             'margin-right': '20px',
@@ -122,8 +104,8 @@
             'size': 'mini',
           },
           on: {
-            click: function (store, data) {
-              console.log('click');
+            click: function () {
+              store.append({id: id++, label: 'testtest', children: []}, data);
             },
           }
         }, ['添加']), h('el-button', {
@@ -131,8 +113,8 @@
               'size': 'mini',
             },
             on: {
-              click: function (store, data) {
-                console.log(store.target);
+              click: function () {
+                store.remove(data);
               }
             }
           },
