@@ -10,7 +10,7 @@
           <el-button type="primary" icon="delete">添加分类</el-button>
         </div>
         <div class="search-input">
-          <el-input placeholder="请输入内容" v-model="input5" style="margin-top: 10px">
+          <el-input placeholder="请输入内容" v-model="filterText" style="margin-top: 10px">
             <el-select v-model="select" slot="prepend" placeholder="请选择">
               <el-option label="一级分类" value="1"></el-option>
               <el-option label="二级分类" value="2"></el-option>
@@ -25,11 +25,13 @@
     <!--start 内容部分-->
     <div class="content">
       <el-tree
+        ref="tree"
         :data="data2"
         :props="defaultProps"
         show-checkbox
         node-key="id"
         default-expand-all
+        :filter-node-method="filterNode"
         :expand-on-click-node="false"
         :render-content="renderContent">
       </el-tree>
@@ -95,13 +97,25 @@
           children: 'children',
           label: 'label'
         },
-        input5: '',
+        filterText: '',
         select: ''
       }
 
     },
 
+    watch: {
+      filterText(val) {
+        this.$refs.tree.filter(val);
+      }
+    },
+
     methods: {
+      //节点过滤
+      filterNode(value, data) {
+        if (!value) return true;
+        return data.label.indexOf(value) !== -1;
+      },
+      //自定义节点内容
       renderContent(h, {node, data, store}) {
         return h('span', [h('span', [h('span', node.label)]), h('span', {
           style: {
