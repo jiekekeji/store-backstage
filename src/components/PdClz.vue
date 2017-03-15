@@ -23,16 +23,16 @@
     </div>
     <!--end 标题和操作部分-->
     <!--start 内容部分-->
-    <div class="content" style="background-color: #007aff;height: 400px;">
+    <div class="content" style="height: auto;">
       <el-tree
         :data="data2"
         :props="defaultProps"
         show-checkbox
         node-key="id"
         default-expand-all
+        @node-click="nodeClick"
         :expand-on-click-node="false"
-        :render-content="renderContent"
-      >
+        :render-content="renderContent">
       </el-tree>
     </div>
     <!--end 内容部分-->
@@ -42,11 +42,10 @@
 
 <script>
   let id = 1000;
-  export default{
-    data(){
+
+  export default {
+    data() {
       return {
-        input5: '',
-        select: '',
         data2: [{
           id: 1,
           label: '一级 1',
@@ -85,25 +84,63 @@
         defaultProps: {
           children: 'children',
           label: 'label'
-        }
+        },
+        mstore: {},
+        mdata: {}
       }
+
     },
-    components: {},
+
     methods: {
       append(store, data) {
+        console.log(data);
         store.append({id: id++, label: 'testtest', children: []}, data);
       },
-
       remove(store, data) {
-        store.remove(data);
+        console.log('remove');
+//        store.remove(data);
       },
-
+      nodeClick(node, data, store){
+        console.log(node);
+        console.log(data);
+        console.log(store);
+      },
       renderContent(h, {node, data, store}) {
-        console.log('renderContent');
-        return (node.label);
+        console.log(data);
+        console.log(store);
+        let me = this;
+        me.mstore = store;
+        me.mdata = data;
+        return h('span', [h('span', [h('span', node.label)]), h('span', {
+          style: {
+            'margin-right': '20px',
+            'position': 'absolute',
+            'right': '0'
+          }
+        }, [h('el-button', {
+          attrs: {
+            'size': 'mini',
+          },
+          on: {
+            click: function (store, data) {
+              console.log('click');
+            },
+          }
+        }, ['添加']), h('el-button', {
+            attrs: {
+              'size': 'mini',
+            },
+            on: {
+              click: function (store, data) {
+                console.log(store.target);
+              }
+            }
+          },
+          ['删除']
+        )])]);
       }
     }
-  }
+  };
 </script>
 <style scoped>
   @import "../assets/style/base.css";
