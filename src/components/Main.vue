@@ -156,7 +156,6 @@
     left: 170px;
     right: 0;
     bottom: 0px;
-    overflow-y: auto;
   }
 
   /*end 主体内容*/

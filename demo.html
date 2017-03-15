@@ -2,72 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
-  <script src="./static/public/js/jquery-1.11.1.min.js"></script>
-  <style>
-    .content-title {
-      height: 45px;
-      width: 100px;
-
-    }
-
-    .content-title > p {
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      word-break: break-all;
-    }
-  </style>
+  <title>Document</title>
 </head>
 <body>
-<div class="bshare-custom">
-  <a title="分享到QQ空间" class="bshare-qzone"></a>
-  <a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
-  <a title="分享到人人网" class="bshare-renren"></a>
-  <a title="分享到腾讯微博" class="bshare-qqmb"></a>
-  <a title="分享到网易微博" title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
-  <span class="BSHARE_COUNT bshare-share-count">0</span></div>
-
-<script type="text/javascript" charset="utf-8"
-        src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
-<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
-
-
+<input type="file" id="photo">
+<div id="click" style="width: 200px; height: 200px; border: 1px solid #000;"></div>
 <script>
+  document.getElementById('photo').addEventListener('change',function(e){
 
-
-  var content = "图文混排内容。。。。\r\n\r\n\r\n\t";
-  var imgTxArr = [];
-
-
-  $('body').append(content.replace('\n', ' ').replace('\t', ' ').replace('\r', ' '));
-  filterImgTx(content);
-  console.log(imgTxArr);
-
-  function filterImgTx(con) {
-    var imgArr = con.match("`(.*?)`");
-    console.log(imgArr)
-    if (null !== imgArr && 0 !== imgArr.length) {
-      var imgTx = {};
-      imgTx.tx = con.substring(0, con.indexOf(imgArr[0])).replace('\n', ' ').replace('\t', ' ').replace('\r', ' ');
-      imgTx.img = imgArr[0];
-      imgTxArr.push(imgTx);
-      con = con.substring(con.indexOf(imgArr[0]) + imgArr[0].length, con.length);
-      console.log(con)
-      filterImgTx(con);
-    } else {
-      if ('' === con) {
+    var files = this.files;
+    var img = new Image();
+    var reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = function(e){
+      var mb = (e.total/1024)/1024;
+      if(mb>= 2){
+        alert('文件大小大于2M');
         return;
       }
-      var imgTx = {};
-      imgTx.tx = con.replace('\n', ' ').replace('\t', ' ').replace('\r', ' ');
-      imgTx.img = null;
-      imgTxArr.push(imgTx);
+      img.src = this.result;
+      img.style.width = "100%";
+      img.style.height= "100%";
+      document.getElementById('click').style.width="200px";
+      document.getElementById('click').style.height="200px";
+      document.getElementById('click').innerHTML = '';
+      document.getElementById('click').appendChild(img);
     }
-  }
-
-
+  });
 </script>
 </body>
 </html>
