@@ -4,21 +4,27 @@
       添加商品
     </div>
     <div class="pg-content">
+      <!--start 商品添加表单-->
       <div class="pg-desc">
-        <el-form ref="form" :model="form" label-width="120px">
+        <el-form ref="form" :model="form" label-width="160px">
+          <!--1、商品名称-->
           <el-form-item label="商品名称">
             <el-input v-model="form.name"></el-input>
           </el-form-item>
+          <!--2、商品简述-->
           <el-form-item label="商品简述">
             <el-input v-model="form.name"></el-input>
           </el-form-item>
+          <!--3、关键词-->
           <el-form-item label="关键词">
             <el-input v-model="form.name"></el-input>
           </el-form-item>
+          <!--4、所属分类-->
           <el-form-item label="所属分类">
             <el-button type="primary" size="small">选择分类</el-button>
             <el-button type="text" :disabled="true">电器家电</el-button>
           </el-form-item>
+          <!--5、是否上架-->
           <el-form-item label="是否上架">
             <el-radio-group v-model="form.resource">
               <el-radio label="是"></el-radio>
@@ -28,6 +34,7 @@
               </el-tooltip>
             </el-radio-group>
           </el-form-item>
+          <!--6、是否免运费-->
           <el-form-item label="是否免运费">
             <el-radio-group v-model="form.resource">
               <el-radio label="是"></el-radio>
@@ -37,55 +44,51 @@
               </el-tooltip>
             </el-radio-group>
           </el-form-item>
+          <!--7、产品相册-->
           <el-form-item label="产品相册">
-            <el-button type="primary" size="small">选择文件</el-button>
-            <el-button type="text" :disabled="true">电器家电</el-button>
+            <el-upload
+              class="upload-demo"
+              action="//jsonplaceholder.typicode.com/posts/"
+              :on-preview="handlePreview"
+              :on-remove="handleRemove"
+              :file-list="fileList2"
+              list-type="picture">
+              <el-button size="small" type="primary">点击上传</el-button>
+              <el-tooltip class="item" effect="dark" content="只能上传jpg/png文件，且不超过500kb" placement="top-start">
+                <el-tag type="warning" class='el-icon-warning' style="margin-left: 20px"></el-tag>
+              </el-tooltip>
+            </el-upload>
           </el-form-item>
-
-
-          <el-form-item label="活动区域">
-            <el-select v-model="form.region" placeholder="请选择活动区域">
-              <el-option label="区域一" value="shanghai"></el-option>
-              <el-option label="区域二" value="beijing"></el-option>
-            </el-select>
+          <!--9、购买成功后增加积分-->
+          <el-form-item label="购买成功后增加积分">
+            <el-input-number v-model="num1" @change="handleChange" :min="0"></el-input-number>
           </el-form-item>
-          <el-form-item label="活动时间">
-            <el-col :span="11">
-              <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
-            </el-col>
-            <el-col class="line" :span="2">-</el-col>
-            <el-col :span="11">
-              <el-time-picker type="fixed-time" placeholder="选择时间" v-model="form.date2"
-                              style="width: 100%;"></el-time-picker>
-            </el-col>
-          </el-form-item>
-          <el-form-item label="即时配送">
-            <el-switch on-text="" off-text="" v-model="form.delivery"></el-switch>
-          </el-form-item>
-          <el-form-item label="活动性质">
-            <el-checkbox-group v-model="form.type">
-              <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-              <el-checkbox label="地推活动" name="type"></el-checkbox>
-              <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-              <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
-            </el-checkbox-group>
-          </el-form-item>
-          <el-form-item label="特殊资源">
+          <!--10 商品推荐类型-->
+          <el-form-item label="商品推荐类型">
             <el-radio-group v-model="form.resource">
-              <el-radio label="线上品牌商赞助"></el-radio>
-              <el-radio label="线下场地免费"></el-radio>
+              <el-radio label="最新商品"></el-radio>
+              <el-radio label="特价商品"></el-radio>
+              <el-radio label="热卖商品"></el-radio>
+              <el-radio label="推荐商品"></el-radio>
             </el-radio-group>
           </el-form-item>
-          <el-form-item label="活动形式">
-            <el-input type="textarea" v-model="form.desc"></el-input>
+          <!--11 发货时间-->
+          <el-form-item label="发货时间">
+            <el-radio-group v-model="form.resource">
+              <el-radio label="12小时内"></el-radio>
+              <el-radio label="24小时内"></el-radio>
+              <el-radio label="48小时内"></el-radio>
+              <el-radio label="72小时内"></el-radio>
+            </el-radio-group>
           </el-form-item>
+
           <el-form-item>
             <el-button type="primary" @click="onSubmit">立即创建</el-button>
             <el-button>取消</el-button>
           </el-form-item>
         </el-form>
-
       </div>
+      <!--end 商品添加表单-->
     </div>
   </div>
 </template>
@@ -109,6 +112,12 @@
     methods: {
       onSubmit() {
         console.log('submit!');
+      },
+      handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePreview(file) {
+        console.log(file);
       }
     }
   }
@@ -135,12 +144,12 @@
   .pg-content {
     height: 100%;
     width: 100%;
+    overflow: auto;
   }
 
   .pg-desc {
-    margin: 0 auto;
     margin-top: 15px;
-    width: 480px;
+    width: 600px;
     height: auto;
     padding-bottom: 60px;
     /*background-color: darkseagreen;*/
