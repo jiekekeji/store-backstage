@@ -10,8 +10,8 @@ var utils = {
       document.title = title;
       var iframe = document.createElement('iframe');
       //打包时
-      iframe.src = '/fsb-web/h5/static/public/logo.png'; // 必须
-      // iframe.src = '../../static/public/logo.png'; // 必须
+      // iframe.src = '/fsb-web/h5/static/public/logo.png'; // 必须
+      iframe.src = '../../static/public/logo.png'; // 必须
       iframe.style.visibility = 'hidden';
       iframe.style.width = '1px';
       iframe.style.height = '1px';
