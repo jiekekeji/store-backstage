@@ -3,6 +3,7 @@
   <div class="container">
     <!--start 顶部导航栏-->
     <div class="top-nav">
+      <div class="top-logo">LOGO</div>
     </div>
     <!--end 顶部导航栏-->
     <!--start 左侧导航栏-->
@@ -131,7 +132,16 @@
   .top-nav {
     height: 48px;
     width: 100%;
-    background-color: #dce9f2;
+    background-color: #438EB9;
+  }
+
+  .top-logo {
+    height: 48px;
+    width: 96px;
+    font-weight: bold;
+    line-height: 48px;
+    text-align: center;
+    background-color: #2ED4DB;
   }
 
   /*end 顶部导航*/
