@@ -1,27 +1,26 @@
 <template>
-  <div class="content-container">
-    <!--start 标题和操作部分-->
-    <div class="title-container">
-      <div class="content-title">
-        用户列表
+  <div class="userlist-container">
+    <div class="title">
+      用户列表
+    </div>
+    <!--start 搜索操作部分-->
+    <div class="content-option">
+      <div class="search-option">
+        <el-button type="primary" icon="delete">刪除所选</el-button>
       </div>
-      <div class="content-option">
-        <div class="search-option">
-          <el-button type="primary" icon="delete">刪除所选</el-button>
-        </div>
-        <div class="search-input">
-          <el-input placeholder="请输入内容" v-model="input5" style="margin-top: 10px">
-            <el-select v-model="select" slot="prepend" placeholder="请选择">
-              <el-option label="用户名" value="1"></el-option>
-              <el-option label="手机号" value="2"></el-option>
-              <el-option label="邮箱" value="3"></el-option>
-            </el-select>
-            <el-button slot="append" icon="search"></el-button>
-          </el-input>
-        </div>
+      <div class="search-input">
+        <el-input placeholder="请输入内容" v-model="input5" style="margin-top: 10px">
+          <el-select v-model="select" slot="prepend" placeholder="请选择">
+            <el-option label="用户名" value="1"></el-option>
+            <el-option label="手机号" value="2"></el-option>
+            <el-option label="邮箱" value="3"></el-option>
+          </el-select>
+          <el-button slot="append" icon="search"></el-button>
+        </el-input>
       </div>
     </div>
-    <!--<div class="zhanwei"></div>-->
+    <!--end 搜索操作部分-->
+
     <!--start 表格内容-->
     <div class="content">
       <div>
@@ -154,32 +153,8 @@
     components: {}
   }
 </script>
-<style scoped>
-  @import "../assets/style/base.css";
-  /*start 搜索区域*/
-  .content-option {
-    height: auto;
-    width: 100%;
-  }
+<style scoped lang="scss">
+  /*@import "../assets/style/base.css";*/
+  @import "../assets/style/userlist.scss";
 
-  .content-option > div {
-    height: 60px;
-  }
-
-  .search-input {
-    float: right;
-    width: 360px;
-    margin: 0 auto;
-    line-height: 60px;
-    margin-right: 30px;
-  }
-
-  .search-option {
-    line-height: 60px;
-    float: left;
-    width: 120px;
-    margin-left: 10px;
-  }
-
-  /*end 搜索区域*/
 </style>

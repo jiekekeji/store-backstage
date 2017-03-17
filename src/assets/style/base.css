@@ -1,60 +1,60 @@
-/*start 面包屑样式*/
-.bread-nav {
-  height: 40px;
-  width: auto;
-  line-height: 40px;
-  text-align: center;
-}
+/*!*start 面包屑样式*!*/
+/*.bread-nav {*/
+  /*height: 40px;*/
+  /*width: auto;*/
+  /*line-height: 40px;*/
+  /*text-align: center;*/
+/*}*/
 
-.breadsty-bar {
-  padding-left: 10px;
-}
+/*.breadsty-bar {*/
+  /*padding-left: 10px;*/
+/*}*/
 
-/*end 面包屑样式*/
+/*!*end 面包屑样式*!*/
 
-/*start 主内容公共样式*/
-.content-container {
-  width: 100%;
-  height: 100%;
-}
+/*!*start 主内容公共样式*!*/
+/*.content-container {*/
+  /*width: 100%;*/
+  /*height: 100%;*/
+/*}*/
 
-/*end 主内容公共样式*/
+/*!*end 主内容公共样式*!*/
 
-/*start 顶部标题*/
-.title-container {
-  height: auto;
-  width: 100%;
-}
+/*!*start 顶部标题*!*/
+/*.title-container {*/
+  /*height: auto;*/
+  /*width: 100%;*/
+/*}*/
 
-.content-title {
-  height: 36px;
-  width: 100%;
-  text-indent: 10px;
-  line-height: 36px;
-  font-size: 15px;
-  color: white;
-  background-color: #474544;
-}
+/*.content-title {*/
+  /*height: 36px;*/
+  /*width: 100%;*/
+  /*text-indent: 10px;*/
+  /*line-height: 36px;*/
+  /*font-size: 15px;*/
+  /*color: white;*/
+  /*background-color: #474544;*/
+/*}*/
 
-/*end 顶部标题*/
+/*!*end 顶部标题*!*/
 
-/*start 基本的表格样式*/
-.table-style {
-  width: 100%;
-  height: auto;
-}
+/*!*start 基本的表格样式*!*/
+/*.table-style {*/
+  /*width: 100%;*/
+  /*height: auto;*/
+/*}*/
 
-/*end 基本的表格样式*/
+/*!*end 基本的表格样式*!*/
 
-/*start 分页样式*/
-.page-sty {
-  width: 100%;
-  height: 96px;
-  text-align: center;
-}
+/*!*start 分页样式*!*/
+/*.page-sty {*/
+  /*width: 100%;*/
+  /*height: 96px;*/
+  /*text-align: center;*/
+/*}*/
 
-.page-sty > div {
-  margin-top: 32px;
-}
+/*.page-sty > div {*/
+  /*margin-top: 32px;*/
+/*}*/
 
-/*end 分页样式*/
+/*!*end 分页样式*!*/

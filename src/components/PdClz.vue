@@ -1,24 +1,22 @@
 <template>
-  <div class="content-container">
+  <div class="pdclz-container">
     <!--start 标题和操作部分-->
-    <div class="title-container">
-      <div class="content-title">
-        商品类别列表
+    <div class="title">
+      商品类别列表
+    </div>
+    <div class="content-option">
+      <div class="search-option">
+        <el-button type="primary" icon="delete">添加分类</el-button>
       </div>
-      <div class="content-option">
-        <div class="search-option">
-          <el-button type="primary" icon="delete">添加分类</el-button>
-        </div>
-        <div class="search-input">
-          <el-input placeholder="请输入内容" v-model="filterText" style="margin-top: 10px">
-            <el-select v-model="select" slot="prepend" placeholder="请选择">
-              <el-option label="一级分类" value="1"></el-option>
-              <el-option label="二级分类" value="2"></el-option>
-              <el-option label="三级分类" value="3"></el-option>
-            </el-select>
-            <el-button slot="append" icon="search"></el-button>
-          </el-input>
-        </div>
+      <div class="search-input">
+        <el-input placeholder="请输入内容" v-model="filterText" style="margin-top: 10px">
+          <el-select v-model="select" slot="prepend" placeholder="请选择">
+            <el-option label="一级分类" value="1"></el-option>
+            <el-option label="二级分类" value="2"></el-option>
+            <el-option label="三级分类" value="3"></el-option>
+          </el-select>
+          <el-button slot="append" icon="search"></el-button>
+        </el-input>
       </div>
     </div>
     <!--end 标题和操作部分-->
@@ -147,39 +145,6 @@
     }
   };
 </script>
-<style scoped>
-  @import "../assets/style/base.css";
-  /*start 搜索区域*/
-  .content-option {
-    height: auto;
-    width: 100%;
-    overflow: auto
-  }
-
-  .search-input {
-    height: 60px;
-    float: right;
-    width: 360px;
-    margin: 0 auto;
-    line-height: 60px;
-    margin-right: 30px;
-  }
-
-  .search-option {
-    height: 60px;
-    line-height: 60px;
-    float: left;
-    width: 120px;
-    margin-left: 10px;
-  }
-
-  /*end 搜索区域*/
-  .content {
-    height: 500px;
-    overflow-y: auto;
-  }
-
-  .el-tree-node__content {
-    position: relative;
-  }
+<style scoped lang="scss">
+  @import "../assets/style/pdclz.scss";
 </style>

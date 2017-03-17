@@ -1,6 +1,6 @@
 <template>
-  <div class="content-container">
-    <div class="content-title">
+  <div class="userfunset-container">
+    <div class="title">
       用户功能设置
     </div>
     <div class="content">
@@ -9,9 +9,7 @@
 
   </div>
 </template>
-<style>
-  @import "../assets/style/base.css";
-</style>
+
 <script>
   export default{
     data(){
@@ -22,3 +20,6 @@
     components: {}
   }
 </script>
+<style scoped lang="scss">
+  @import "../assets/style/userfunset.scss";
+</style>

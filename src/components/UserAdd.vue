@@ -1,10 +1,8 @@
 <template>
-  <div class="content-container">
+  <div class="useradd-container">
     <!--start 标题和操作部分-->
-    <div class="title-container">
-      <div class="content-title">
-        用户添加
-      </div>
+    <div class="content-title">
+      用户添加
     </div>
     <!--end 标题和操作部分-->
     <!--start 表内容-->
@@ -51,16 +49,7 @@
     <!--end 内容-->
   </div>
 </template>
-<style scoped>
-  .container {
-    margin: 0 auto;
-    margin-top: 15px;
-    width: 480px;
-    height: auto;
-    padding-bottom: 60px;
-    /*background-color: darkseagreen;*/
-  }
-</style>
+
 <script>
   export default{
     data(){
@@ -76,3 +65,6 @@
     components: {}
   }
 </script>
+<style scoped lang="scss">
+  @import "../assets/style/useradd.scss";
+</style>

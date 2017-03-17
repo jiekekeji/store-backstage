@@ -1,0 +1,32 @@
+.pdadd-contianer {
+  height: auto;
+  width: 100%;
+
+  /*start 标题*/
+  .pg-title {
+    height: 36px;
+    width: 100%;
+    text-indent: 10px;
+    line-height: 36px;
+    font-size: 15px;
+    color: white;
+    background-color: #474544;
+  }
+
+  /*start 内容区域*/
+  .pg-content {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+
+    .pg-desc {
+      margin: 0 auto;
+      margin-top: 15px;
+      width: 600px;
+      height: auto;
+      padding-bottom: 60px;
+      overflow: auto;
+      /*background-color: darkseagreen;*/
+    }
+  }
+}

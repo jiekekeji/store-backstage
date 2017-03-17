@@ -1,0 +1,57 @@
+.main-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  //start 头部标题部分
+  .top-nav {
+    height: 48px;
+    width: 100%;
+    background-color: #438EB9;
+
+    .top-logo {
+      height: 48px;
+      width: 96px;
+      font-weight: bold;
+      line-height: 48px;
+      text-align: center;
+      background-color: #2ED4DB;
+    }
+  }
+
+  //end 头部标题部分
+
+  //start 左侧导航
+  .left-nav {
+    height: 100%;
+    width: 170px;
+    position: absolute;
+    top: 48px;
+    left: 0px;
+    bottom: 0px;
+    overflow-y: scroll;
+    background-color: #eef1f6;
+  }
+
+  //end 头部标题部分
+
+  /*start 主体内容*/
+  .main-content {
+    height: 100%;
+    position: absolute;
+    top: 48px;
+    left: 170px;
+    right: 0;
+    bottom: 0px;
+    overflow: auto;
+  }
+
+  /*end 主体内容*/
+
+}
+
+

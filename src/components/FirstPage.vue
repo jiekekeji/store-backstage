@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%;width: 100%;overflow: auto">
+  <div class="firstpage-contianer">
     <ul class="data-area">
       <li id="main1"></li>
       <li id="main2"></li>
@@ -9,21 +9,7 @@
     </ul>
   </div>
 </template>
-<style scoped>
-  .data-area {
-    margin: 0 auto;
-    width: auto;
-    height: auto;
-  }
 
-  .data-area > li {
-    float: left;
-    height: 400px;
-    width: 400px;
-    margin-left: 20px;
-    margin-top: 20px;
-  }
-</style>
 <script>
   var echarts = require('../assets/echarts/echarts.min');
   export default{
@@ -74,3 +60,6 @@
     components: {}
   }
 </script>
+<style scoped lang="scss">
+  @import "../assets/style/firstpage.scss";
+</style>

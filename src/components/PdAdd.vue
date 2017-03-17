@@ -1,5 +1,5 @@
 <template>
-  <div class="contianer">
+  <div class="pdadd-contianer">
     <div class="pg-title">
       添加商品
     </div>
@@ -202,40 +202,6 @@
     }
   }
 </script>
-<style scoped>
-  .contianer {
-    height: 100%;
-    width: 100%;
-  }
-
-  /*start 标题*/
-  .pg-title {
-    height: 36px;
-    width: 100%;
-    text-indent: 10px;
-    line-height: 36px;
-    font-size: 15px;
-    color: white;
-    background-color: #474544;
-  }
-
-  /*end 标题*/
-  /*start 内容区域*/
-  .pg-content {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-  }
-
-  .pg-desc {
-    margin: 0 auto;
-    margin-top: 15px;
-    width: 600px;
-    height: auto;
-    padding-bottom: 60px;
-    overflow: auto;
-    /*background-color: darkseagreen;*/
-  }
-
-  /*end 内容区域*/
+<style scoped lang="scss">
+  @import "../assets/style/pdadd.scss";
 </style>

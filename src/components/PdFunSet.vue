@@ -1,10 +1,13 @@
 <template>
-  <div>
-    <button @click="open({name:'jack'})">试试</button>
+  <div class="pdfunset-container">
+    <!--start 标题部分-->
+    <div class="title">
+      商城功能设置
+    </div>
+    <!--end 标题部分-->
   </div>
 </template>
-<style>
-</style>
+
 <script>
   export default{
     data(){
@@ -20,3 +23,6 @@
     }
   }
 </script>
+<style scoped lang="scss">
+  @import "../assets/style/pdfunset.scss";
+</style>

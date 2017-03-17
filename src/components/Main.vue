@@ -1,6 +1,6 @@
 <!--测试页面-->
 <template>
-  <div class="container">
+  <div class="main-container">
     <!--start 顶部导航栏-->
     <div class="top-nav">
       <div class="top-logo">LOGO</div>
@@ -91,7 +91,6 @@
       'phoneNum': 'listenPhoneNum'
     },
     created () {
-//      this.toMatchTest();
     },
     mounted: function () {
     },
@@ -115,58 +114,6 @@
   }
 </script>
 
-<style scoped>
-  /*start 整个页面*/
-  .container {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  /*end 整个页面*/
-  /*start 顶部导航*/
-  .top-nav {
-    height: 48px;
-    width: 100%;
-    background-color: #438EB9;
-  }
-
-  .top-logo {
-    height: 48px;
-    width: 96px;
-    font-weight: bold;
-    line-height: 48px;
-    text-align: center;
-    background-color: #2ED4DB;
-  }
-
-  /*end 顶部导航*/
-  /*start 左侧导航*/
-  .left-nav {
-    height: 100%;
-    width: 170px;
-    position: absolute;
-    top: 48px;
-    left: 0px;
-    bottom: 0px;
-    overflow-y: scroll;
-    background-color: #eef1f6;
-  }
-
-  /*end 左侧导航*/
-  /*start 主体内容*/
-  .main-content {
-    height: 100%;
-    position: absolute;
-    top: 48px;
-    left: 170px;
-    right: 0;
-    bottom: 0px;
-  }
-
-  /*end 主体内容*/
+<style scoped lang="scss">
+  @import "../assets/style/main.scss";
 </style>
